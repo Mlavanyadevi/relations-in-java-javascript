@@ -1,0 +1,46 @@
+class Address {
+    private String street;
+    private String city;
+    private String zipCode;
+
+    public Address(String street, String city, String zipCode) {
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+
+    public void displayAddress() {
+        System.out.println("Street: " + street);
+        System.out.println("City: " + city);
+        System.out.println("ZIP Code: " + zipCode);
+    }
+}
+
+class Person {
+    private String name;
+    private Address address; 
+    public Person(String name, Address address) {
+        this.name = name;
+        this.address = address; 
+    }
+
+    public void displayPersonInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Address:");
+        address.displayAddress(); 
+    }
+}
+
+
+public class PersonExample {
+    public static void main(String[] args) {
+        
+        Address personAddress = new Address("123 Main St", "hyderabad", "12345");
+
+        
+        Person person = new Person("John", personAddress);
+
+     
+        person.displayPersonInfo();
+    }
+}
