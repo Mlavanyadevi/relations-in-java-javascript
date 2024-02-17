@@ -1,0 +1,15 @@
+class Animal {
+    makeSound() {
+        console.log("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    bark() {
+        console.log("Dog is barking");
+    }
+}
+
+let myDog = new Dog();
+myDog.makeSound(); // Output: Animal makes a sound
+myDog.bark(); // Output: Dog is barking
