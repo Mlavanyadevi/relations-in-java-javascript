@@ -1,0 +1,35 @@
+class Engine {
+    void start() {
+        System.out.println("Engine is starting...");
+    }
+
+    void stop() {
+        System.out.println("Engine is stopping...");
+    }
+}
+
+class Car {
+    private Engine engine; // Car class uses Engine class
+
+    public Car() {
+        this.engine = new Engine(); // Instantiate Engine object
+    }
+
+    void drive() {
+        engine.start(); // Car class utilizes the start() method from Engine class
+        System.out.println("Car is moving...");
+    }
+
+    void stopCar() {
+        System.out.println("Car is stopping...");
+        engine.stop(); // Car class utilizes the stop() method from Engine class
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.drive(); // Car starts and moves
+        myCar.stopCar(); // Car stops
+    }
+}
