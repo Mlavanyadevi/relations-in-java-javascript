@@ -1,0 +1,57 @@
+// Base class
+class Person {
+    private String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public void introduce() {
+        System.out.println("Hello, my name is " + name + ".");
+    }
+}
+
+// Derived class 1
+class Student extends Person {
+    private int studentId;
+
+    public Student(String name, int studentId) {
+        super(name);
+        this.studentId = studentId;
+    }
+
+    public void study() {
+        System.out.println("Student with ID " + studentId + " is studying.");
+    }
+}
+
+// Derived class 2
+class Teacher extends Person {
+    private String subject;
+
+    public Teacher(String name, String subject) {
+        super(name);
+        this.subject = subject;
+    }
+
+    public void teach() {
+        System.out.println("Teacher " + getName() + " is teaching " + subject + ".");
+    }
+}
+
+// Main class
+public class PersonExample {
+    public static void main(String[] args) {
+        
+        Student student = new Student("John", 12345);
+        Teacher teacher = new Teacher("Mr. Smith", "Mathematics");
+
+       
+        student.introduce();
+        teacher.introduce();
+
+        
+        student.study();
+        teacher.teach();
+    }
+}
